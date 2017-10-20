@@ -1,0 +1,106 @@
+
+
+
+<head>
+	<link rel="stylesheet" type="text/css" href="res.css">
+	<link rel="stylesheet" type="text/css" href="font-awesome.css">
+	<link rel="stylesheet" type="text/css" href="res1.css">
+	<!-- <link rel="stylesheet" type="text/css" href="flip.css"> -->
+	<script type="text/javascript">
+		'use strict';
+
+var app = {
+
+  chars: ['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z','0','1','2','3','4','5','6','7','8','9'],
+
+  init: function () {
+    app.container = document.createElement('div');
+    app.container.className = 'animation-container';
+    document.body.appendChild(app.container);
+    window.setInterval(app.add, 100);
+  },
+
+  add: function () {
+    var element = document.createElement('span');
+    app.container.appendChild(element);
+    app.animate(element);
+  },
+
+  animate: function (element) {
+    var character = app.chars[Math.floor(Math.random() * app.chars.length)];
+    var duration = Math.floor(Math.random() * 15) + 1;
+    var offset = Math.floor(Math.random() * (50 - duration * 2)) + 3;
+    var size = 10 + (15 - duration);
+    element.style.cssText = 'right:'+offset+'vw; font-size:'+size+'px;animation-duration:'+duration+'s';
+    element.innerHTML = character;
+    window.setTimeout(app.remove, duration * 1000, element);
+  },
+
+  remove: function (element) {
+    element.parentNode.removeChild(element);
+  },
+
+};
+
+document.addEventListener('DOMContentLoaded', app.init);
+	</script>
+	<title>Karan Resume</title>
+
+</head>
+
+
+<body>
+
+<aside class="profile-card">
+  <header>
+    <!-- here’s the avatar -->
+    <a target="_blank" href="#">
+      <img src="kk.jpg" class="hoverZoomLink">
+    </a>
+
+    <!-- the username -->
+    <h1>
+            Karan Kalra
+          </h1>
+
+    <!-- and role or location -->
+    <h2>
+            Web Developer, Dancer
+          </h2>
+
+  </header>
+
+  <!-- bit of a bio; who are you? -->
+  <div class="profile-bio">
+
+    <p>
+      It takes monumental improvement for us to change how we live our lives. Design is the way we access that improvement. And for the life as it is, live it as it is.
+    </p>
+
+  </div>
+
+  <!-- some social links to show off -->
+  <ul class="profile-social-links">
+  <li>
+  	<a href=""></a>
+  </li>
+    <li>
+      <a target="_blank" href="https://www.facebook.com/kalrakaran04">
+        <i class="fa fa-facebook"></i>
+      </a>
+    </li>
+    
+    <li>
+      <a target="_blank" href="https://github.com/karan271">
+        <i class="fa fa-github"></i>
+      </a>
+    </li>
+
+    <li>
+    	
+    </li>
+   
+  </ul>
+</aside>
+
+</body>
